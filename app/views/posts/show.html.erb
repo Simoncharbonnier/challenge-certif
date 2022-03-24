@@ -1,9 +1,19 @@
 <div class="container">
   <div class="nothing"></div>
   <%= link_to "Retour à la liste", posts_path, class: "anti-button" %>
-  <h1 class=""><%= @post.title %></h1>
-  <p><%= @post.content %></p>
-  <em><p class="text-muted">Posté par <%= @post.user.nickname %></p></em>
+  <div class="post">
+    <h1 class=""><%= @post.title %></h1>
+    <p><%= @post.content %></p>
+    <div class="under-post">
+      <p class="text-muted"><em>Posté par <%= @post.user.nickname %> le <%= @post.created_at.strftime("%d/%m") %></em></p>
+      <div class="links">
+        <% if current_user = @post.user %>
+          <p id="btn" class="pointer">Modifier le post</p>
+          <%= link_to "Supprimer le post", post_path, method: "delete", class: "red" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <hr>
   <div class="commentaires">
     <div class="list">
@@ -24,3 +34,31 @@
     </div>
   </div>
 </div>
+
+<div id="myModal" class="modal-edit-post">
+  <div class="modal-content-edit-post flex">
+    <div class="form-edit-title flex">
+      <h1>Modifier votre post</h1>
+      <i class="close far fa-times-circle"></i>
+    </div>
+    <%= simple_form_for(@post) do |f| %>
+      <%= f.input :title, label: false, placeholder: "Titre" %>
+      <%= f.input :content, label: false, placeholder: "Contenu" %>
+      <%= f.input :url, label: false, placeholder: "Url" %>
+      <%= f.submit "Valider", class: "button"%>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("btn");
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+</script>

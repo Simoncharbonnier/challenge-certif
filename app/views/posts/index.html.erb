@@ -6,7 +6,7 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="post-index-infos">
           <h2><%= post.title %></h2>
-          <em><p class="text-muted">Posté par <%= post.user.nickname %></p></em>
+          <p class="text-muted"><em>Posté par <%= post.user.nickname %> le <%= post.created_at.strftime("%d/%m") %></em></p>
         </div>
       </div>
     <% end %>
