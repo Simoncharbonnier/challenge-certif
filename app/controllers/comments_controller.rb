@@ -4,9 +4,13 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.post = @post
     @comment.user = current_user
-    @comment.save
 
-    redirect_to post_path(@post)
+    if @comment.save
+      @comment.save
+      redirect_to post_path(@post), notice: "Commentaire créé."
+    else
+      redirect_to post_path(@post), alert: "Commentaire invalide."
+    end
   end
 
   private

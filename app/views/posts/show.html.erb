@@ -1,12 +1,26 @@
-<%= link_to "Back to all posts", posts_path %>
-<h1 class="">hi</h1>
-<%= @post.title %>
-<%= @post.content %>
-<em><p class="text-muted">Posté par <%= @post.user.nickname %></p></em>
-<% @comments.each do |comment| %>
-  <%= comment.content %>
-<% end %>
-<%= simple_form_for([@post, @comment]) do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Add a comment", method: "post" %>
-<% end %>
+<div class="container">
+  <div class="nothing"></div>
+  <%= link_to "Retour à la liste", posts_path, class: "anti-button" %>
+  <h1 class=""><%= @post.title %></h1>
+  <p><%= @post.content %></p>
+  <em><p class="text-muted">Posté par <%= @post.user.nickname %></p></em>
+  <hr>
+  <div class="commentaires">
+    <div class="list">
+      <% @comments.each do |comment| %>
+        <div class="list-element">
+          <p><%= comment.content %></p>
+          <p class="text-muted origin-com"><em>Ajouté par <%= comment.user.nickname %></em></p>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+    <div class="form">
+      <h5 class="form-title"><strong>Un commentaire ?</strong></h5>
+      <%= simple_form_for([@post, @comment]) do |f| %>
+        <%= f.input :content, as: :text, label: false %>
+        <%= f.submit "Ajoute ton commentaire", method: "post", class: "button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

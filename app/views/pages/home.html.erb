@@ -1,3 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to 'All the posts', posts_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Webnews vous invite à <strong>découvrir ce qui passionne votre prochain</strong> !</h1>
+    <p>Chacun peut partager le sujet qui lui plaît.</p>
+    <%= link_to "Découvrir maintenant !", posts_path, class: "button" %>
+  </div>
+</div>
