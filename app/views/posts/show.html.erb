@@ -10,7 +10,7 @@
       <% @comments.each do |comment| %>
         <div class="list-element">
           <p><%= comment.content %></p>
-          <p class="text-muted origin-com"><em>Ajouté par <%= comment.user.nickname %></em></p>
+          <p class="text-muted origin-com"><em>Ajouté par <%= comment.user.nickname %> le <%= comment.created_at.strftime("%d/%m") %></em></p>
         </div>
         <hr>
       <% end %>
