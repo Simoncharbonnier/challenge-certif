@@ -1,0 +1,10 @@
+<%= link_to "Back to all posts", posts_path %>
+<h1>hi</h1>
+<%= @post.title %>
+<% @comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
+<%= simple_form_for([@post, @comment]) do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Add a comment", method: "post" %>
+<% end %>

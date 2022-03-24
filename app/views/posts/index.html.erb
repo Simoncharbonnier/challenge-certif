@@ -1,1 +1,8 @@
 <h1>hi</h1>
+<% @posts.each do |post| %>
+  <div>
+    <%= link_to post_path(post) do %>
+      <%= post.title %>
+    <% end %>
+  </div>
+<% end %>

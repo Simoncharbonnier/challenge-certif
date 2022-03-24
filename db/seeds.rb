@@ -12,4 +12,5 @@ post4 = Post.create(user: pierre, title: "post 4", content: "content post 4", ur
 post5 = Post.create(user: pierre, title: "post 5", content: "content post 5", url: "www.urllambda.com")
 
 Comment.create(user: pierre, post: post1, content: "super nice !")
+Comment.create(user: simon, post: post1, content: "merci !")
 p "Created !"
