@@ -1,6 +1,8 @@
 <%= link_to "Back to all posts", posts_path %>
 <h1>hi</h1>
 <%= @post.title %>
+<%= @post.content %>
+<em><p class="text-muted">Posté par <%= @post.user.nickname %></p></em>
 <% @comments.each do |comment| %>
   <%= comment.content %>
 <% end %>

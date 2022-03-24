@@ -2,3 +2,13 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "post-index";
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}

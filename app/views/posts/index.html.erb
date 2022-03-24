@@ -1,8 +1,14 @@
-<h1>hi</h1>
-<% @posts.each do |post| %>
-  <div>
+<div class="container">
+  <h1>Découvrez l'actualité !</h1>
+  <% @posts.each do |post| %>
     <%= link_to post_path(post) do %>
-      <%= post.title %>
+      <div class="post-index">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="post-index-infos">
+          <h2><%= post.title %></h2>
+          <em><p class="text-muted">Posté par <%= post.user.nickname %></p></em>
+        </div>
+      </div>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
+</div>
