@@ -19,16 +19,10 @@
   margin: 5% auto;
   padding: 20px;
   width: 50%;
-  border-radius: 20px;
+  border-radius: 5px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .edit_post {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
   form {
     display: flex;
     flex-direction: column;
@@ -36,13 +30,13 @@
     text-align: center;
   }
   .input {
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .form-post-title {
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 1rem;
     h1 {
-      color: #F78764;
+      color: green;
       font-weight: bold;
     }
   }
