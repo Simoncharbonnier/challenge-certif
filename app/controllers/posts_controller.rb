@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.sort_by { |post| post.votes.size }.reverse
     @post_new = Post.new
   end
 

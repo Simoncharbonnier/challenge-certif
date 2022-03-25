@@ -3,11 +3,11 @@
 <div class="container">
   <div class="post">
     <div class="title-post-show">
-      <h1 class="title-post"><%= @post.title %> &nbsp<a href="https://<%= @post.url %>" target="_blank"><i class="fas fa-external-link-alt link"></i></a></h1>
+      <h1 class="title-post"><%= @post.title %> (<%= @post.votes.size %> votes) &nbsp<a href="https://<%= @post.url %>" target="_blank"><i class="fas fa-external-link-alt link"></i></a></h1>
     </div>
     <p><%= @post.content %></p>
     <div class="under-post">
-      <p class="text-muted"><em>Posté par <%= @post.user.nickname %> le <%= @post.created_at.strftime("%d/%m") %></em></p>
+      <p class="text-muted"><em>Posté par <%= @post.user.nickname %> le <%= @post.created_at.strftime("%d/%m/%y") %></em></p>
       <div class="links">
         <% if current_user == @post.user %>
           <p id="btn" class="pointer">Modifier le post</p>
@@ -22,7 +22,7 @@
       <% @comments.each do |comment| %>
         <div class="list-element">
           <p><%= comment.content %></p>
-          <p class="text-muted origin-com"><em>Ajouté par <%= comment.user.nickname %> le <%= comment.created_at.strftime("%d/%m") %></em></p>
+          <p class="text-muted origin-com"><em>Ajouté par <%= comment.user.nickname %> le <%= comment.created_at.strftime("%d/%m/%y") %> à <%= @post.created_at.strftime("%k:%M")  %></em></p>
         </div>
         <hr>
       <% end %>

@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
   background: white;
+  .logo {
+    font-weight: bold;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

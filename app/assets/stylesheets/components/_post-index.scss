@@ -5,6 +5,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin: 32px 0px;
   transition: margin 0.3s;
@@ -13,7 +14,7 @@
   }
   h2 {
     height: 100%;
-    width: auto;
+    width: 1000px;
     object-fit: cover;
     padding-bottom: 10px;
     font-size: 23px;
@@ -29,4 +30,12 @@
   .post-index-infos {
     padding: 16px;
   }
+}
+.vote-link {
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-right: 20px;
+  background-color: whitesmoke;
+  color: white;
 }

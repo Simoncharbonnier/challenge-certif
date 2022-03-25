@@ -7,8 +7,12 @@
           <h2><%= post.title %></h2>
           <p class="text-muted"><em>Posté par <%= post.user.nickname %> le <%= post.created_at.strftime("%d/%m") %></em></p>
         </div>
-        <%= post.votes.size %>
-        <%= link_to "+1", post_votes_path(post), method: :post %>
+        <div class="vote-link">
+          <%= post.votes.size %>
+          <%= link_to post_votes_path(post), method: :post do %>
+            &nbsp +1
+          <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>
