@@ -12,16 +12,16 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Tous les posts", "#", class: "nav-link" %>
+          <%= link_to "Tous les posts", posts_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Mes posts", "#", class: "nav-link" %>
-        </li>
+        <% if !@post %>
+          <li class="nav-item">
+            <p id="newBtn" class="nav-link">Nouveau post</p>
+          </li>
+        <% end %>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -33,3 +33,32 @@
     </ul>
   </div>
 </div>
+<% if current_user %>
+  <div id="newModal" class="modal-edit-post">
+    <div class="modal-content-edit-post flex">
+      <div class="form-post-title flex">
+        <h1>Créer un post</h1>
+        <div><i class="closenew far fa-times-circle"></i></div>
+      </div>
+      <%= simple_form_for(@post_new) do |f| %>
+        <%= f.input :title, label: false, placeholder: "Titre" %>
+        <%= f.input :content, as: :text, label: false, placeholder: "Article" %>
+        <%= f.input :url, label: false, placeholder: "Lien" %>
+        <%= f.submit "Valider", class: "button" %>
+      <% end %>
+    </div>
+  </div>
+
+  <script>
+    var modal = document.getElementById("newModal");
+    var btn = document.getElementById("newBtn");
+    var span = document.getElementsByClassName("closenew")[0];
+
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  </script>
+<% end %>

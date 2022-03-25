@@ -3,7 +3,6 @@
   <% @posts.each do |post| %>
     <%= link_to post_path(post) do %>
       <div class="post-index">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="post-index-infos">
           <h2><%= post.title %></h2>
           <p class="text-muted"><em>Posté par <%= post.user.nickname %> le <%= post.created_at.strftime("%d/%m") %></em></p>

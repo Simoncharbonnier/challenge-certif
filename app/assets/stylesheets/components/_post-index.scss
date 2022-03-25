@@ -11,16 +11,12 @@
   &:hover {
     margin: 32px 10px;
   }
-  img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
   h2 {
     height: 100%;
-    width: 120px;
+    width: auto;
     object-fit: cover;
     padding-bottom: 10px;
+    font-size: 23px;
   }
   p {
     font-size: 12px;

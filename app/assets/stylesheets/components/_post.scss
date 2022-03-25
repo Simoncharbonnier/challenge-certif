@@ -4,6 +4,7 @@
 .under-post {
   display: flex;
   justify-content: space-between;
+  margin-top: 2rem;
   .links {
     display: flex;
     text-decoration: underline;
@@ -14,5 +15,16 @@
   .red {
     margin-left: 1rem;
     color: red;
+  }
+}
+.title-post-show {
+  display: flex;
+  align-items: center;
+  .title-post {
+    padding-right: 20px;
+  }
+  .link {
+    margin-top: 20px;
+    font-size: 30px;
   }
 }

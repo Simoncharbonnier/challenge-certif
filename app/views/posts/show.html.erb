@@ -1,8 +1,10 @@
+<div class="nothing"></div>
+<%= link_to "Retour à la liste", posts_path, class: "anti-button margin-left" %>
 <div class="container">
-  <div class="nothing"></div>
-  <%= link_to "Retour à la liste", posts_path, class: "anti-button" %>
   <div class="post">
-    <h1 class=""><%= @post.title %></h1>
+    <div class="title-post-show">
+      <h1 class="title-post"><%= @post.title %> &nbsp<a href="https://<%= @post.url %>" target="_blank"><i class="fas fa-external-link-alt link"></i></a></h1>
+    </div>
     <p><%= @post.content %></p>
     <div class="under-post">
       <p class="text-muted"><em>Posté par <%= @post.user.nickname %> le <%= @post.created_at.strftime("%d/%m") %></em></p>
@@ -39,11 +41,11 @@
   <div class="modal-content-edit-post flex">
     <div class="form-post-title flex">
       <h1>Modifier votre post</h1>
-      <i class="close far fa-times-circle"></i>
+      <div><i class="close far fa-times-circle"></i></div>
     </div>
     <%= simple_form_for(@post) do |f| %>
       <%= f.input :title, label: false %>
-      <%= f.input :content, label: false %>
+      <%= f.input :content, as: :text, label: false %>
       <%= f.input :url, label: false %>
       <%= f.submit "Valider", class: "button"%>
     <% end %>

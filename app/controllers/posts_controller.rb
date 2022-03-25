@@ -1,12 +1,26 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @post_new = Post.new
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = Comment.where(post: @post)
+    @post_new = Post.new
+    @comments = Comment.where(post: @post).reverse
     @comment = Comment.new
+  end
+
+  def create
+    @post = Post.new(post_params)
+    @post.user = current_user
+
+    if @post.save
+      @post.save
+      redirect_to post_path(@post), notice: "Post créé."
+    else
+      redirect_to posts_path, alert: "Post invalide."
+    end
   end
 
   def update
