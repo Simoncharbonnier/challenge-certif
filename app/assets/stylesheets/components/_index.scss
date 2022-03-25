@@ -26,3 +26,10 @@ h1 {
 .nothing {
   height: 15px;
 }
+.link-devise {
+  text-decoration: underline;
+  color: rgb(56, 56, 56);
+  &:hover {
+    color: black;
+  }
+}
