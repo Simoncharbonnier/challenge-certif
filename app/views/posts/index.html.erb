@@ -8,9 +8,11 @@
           <p class="text-muted"><em>Posté par <%= post.user.nickname %> le <%= post.created_at.strftime("%d/%m") %></em></p>
         </div>
         <div class="vote-link">
-          <%= post.votes.size %>
-          <%= link_to post_votes_path(post), method: :post do %>
-            &nbsp +1
+          <div class="black"><%= post.votes.size %></div>
+          <% if !Vote.find_by(user: current_user, post: post) %>
+            <%= link_to post_votes_path(post), method: :post do %>
+              &nbsp +1
+            <% end %>
           <% end %>
         </div>
       </div>

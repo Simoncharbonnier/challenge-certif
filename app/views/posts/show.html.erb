@@ -1,9 +1,13 @@
 <div class="nothing"></div>
-<%= link_to "Retour à la liste", posts_path, class: "anti-button margin-left" %>
+<%= link_to "Retour à l'actualité", posts_path, class: "anti-button margin-left" %>
 <div class="container">
   <div class="post">
     <div class="title-post-show">
-      <h1 class="title-post"><%= @post.title %> (<%= @post.votes.size %> votes) &nbsp<a href="https://<%= @post.url %>" target="_blank"><i class="fas fa-external-link-alt link"></i></a></h1>
+      <% if @post.votes.size == 1 %>
+        <h1 class="title-post"><%= @post.title %> (<%= @post.votes.size %> vote) &nbsp<a href="https://<%= @post.url %>" target="_blank"><i class="fas fa-external-link-alt link"></i></a></h1>
+      <% else %>
+        <h1 class="title-post"><%= @post.title %> (<%= @post.votes.size %> votes) &nbsp<a href="https://<%= @post.url %>" target="_blank"><i class="fas fa-external-link-alt link"></i></a></h1>
+      <% end %>
     </div>
     <p><%= @post.content %></p>
     <div class="under-post">
