@@ -1,3 +1,7 @@
+<h1><a href="https://certif-challenge-simon.herokuapp.com/" target="_blank">Projet Webnews</a></h1>
+<p>C'est un projet que j'ai codé seul lors de la certification du Wagon, nous avions 8 heures pour le réaliser.</p>
+<p>Ci-dessous, vous trouverez les consignes données au début de l'épreuve, j'ai décidé de rajouter quelques fonctionnalités afin d'avoir un site un peu plus complet.</p>
+
 # Rails Share Posts
 
 Dans cet exercice, vous devez implémenter des fonctionnalités dans une application web `rails` à partir du cahier des charges spécifié ci-dessous et correspondant à votre sujet :
