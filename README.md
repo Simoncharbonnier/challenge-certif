@@ -1,6 +1,6 @@
 <h1><a href="https://certif-challenge-simon.herokuapp.com/" target="_blank">Projet Webnews</a></h1>
 <p>C'est un projet que j'ai codé seul lors de la certification du Wagon, nous avions 8 heures pour le réaliser.</p>
-<p>Ci-dessous, vous trouverez les consignes données au début de l'épreuve, j'ai décidé de rajouter quelques fonctionnalités afin d'avoir un site un peu plus complet.</p>
+<p>Ci-dessous, vous trouverez les consignes données, j'ai décidé pendant l'épreuve de rajouter quelques fonctionnalités afin d'avoir un site un peu plus complet.</p>
 
 # Rails Share Posts
 
